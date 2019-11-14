@@ -37,3 +37,29 @@ https://github.com/skylock/cypress-angular-coverage-example
 ## Merging Coverage
 
 https://github.com/bahmutov/cypress-and-jest
+
+## Running
+
+Run the following:
+
+```
+yarn install
+yarn test --coverage
+yarn cypress run
+yarn coverage-report
+open ./coverage/combined/lcov-report/src/app/app.component.ts.html
+```
+
+You will see `Cannot read property 'start' of undefined`.
+
+The reason is that the coverage produced by jest and cypress is different. Compare the original files and you will see that :
+
+```
+open ./coverage/jest/lcov-report/app.component.ts.html
+open ./coverage/cypress/lcov-report/src/app/app.component.ts.html
+```
+
+File produced by cypress has 2 lines and 3 statements.
+File produced by jest has 3 lines and 5 statements.
+
+They cannot be combined.
