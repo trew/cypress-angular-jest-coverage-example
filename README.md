@@ -33,3 +33,7 @@ https://github.com/just-jeb/angular-builders/tree/master/packages/jest
 ## Cypress Coverage Installation
 
 https://github.com/skylock/cypress-angular-coverage-example
+
+## Merging Coverage
+
+https://github.com/bahmutov/cypress-and-jest

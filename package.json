@@ -7,7 +7,12 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "prenyc:copy-reports": "mkdir coverage/reports || true",
+    "nyc:copy-reports": "cp coverage/cypress/coverage-final.json coverage/reports/cypress.json && cp coverage/jest/coverage-final.json coverage/reports/jest.json",
+    "prenyc:merge-reports": "rm -rf .nyc_output && mkdir .nyc_output || mkdir .nyc_output || true",
+    "nyc:merge-reports": "nyc merge coverage/reports && mv coverage.json .nyc_output/out.json",
+    "coverage-report": "yarn nyc:copy-reports && yarn nyc:merge-reports && nyc report --reporter lcov --report-dir coverage/combined"
   },
   "private": true,
   "nyc": {
