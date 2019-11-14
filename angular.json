@@ -115,6 +115,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "cypress-angular-jest-coverage-example"
 }
